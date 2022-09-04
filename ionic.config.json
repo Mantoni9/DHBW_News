@@ -1,0 +1,7 @@
+{
+  "name": "DHBW_News",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
