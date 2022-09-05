@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Verlauf</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="background-color:#444444;">
+  <div class="spacing">
+
+  <h2 class="info-label">Es befinden sich {{ anzahlAnfragenPromise | async }} Datensätze in der Datenbank</h2>
+
+  &nbsp;
+
+  <ion-button expand="block" (click)="onAlleLoeschenButton()">Alle Einträge löschen</ion-button>
+
+  &nbsp;
+
+  <p style="padding-left: 0.5rem ;">Zum löschen des Eintrages nach links wischen.</p>
+
+  &nbsp;
+
+  <ion-list>
+
+    <ion-item-sliding *ngFor="let eintrag of ergebnisEintragArrayPromise | async" #slidingItem>
+      <ion-item style="border-radius: 16px; background-color: #000000">
+        <ion-label>
+          <h2>{{ eintrag.zeit | date}}</h2>
+
+            <h3 *ngFor="let ergebnis of eintrag.ergebnisse">Suchbegriff: {{ ergebnis.category }}</h3>
+            <h3 *ngFor="let ergebnis of eintrag.ergebnisse">Suchergebnisse: {{ ergebnis.totalCount }} Artikel</h3>
+            <h3 *ngFor="let ergebnis of eintrag.ergebnisse">Kommentar: {{ ergebnis.kommentar }}</h3>
+
+        </ion-label>
+      </ion-item>
+
+      <ion-item-options side="end">
+        <ion-item-option color="danger" (click)="onLoeschenButton(eintrag.zeit, eintrag.zeit['ergebnis.kommentar'] , slidingItem)">Löschen</ion-item-option>
+      </ion-item-options>
+
+    </ion-item-sliding>
+
+  </ion-list>
+</div>
+
+
+</ion-content>

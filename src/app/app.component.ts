@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Platform, MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,19 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+  constructor(
+    private platform: Platform,
+    private menuController: MenuController
+  ) {
+    this.initializeApp();
+  }
+
+  initializeApp() {
+    this.platform.ready().then(() => { });
+  }
+
+  closeMenu() {
+
+    this.menuController.close();
+  }
 }

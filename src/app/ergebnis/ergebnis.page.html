@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Suchergebnisse
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="result-text">
+    <ion-text slot="start">
+      <h4>Wir haben für Ihren Suchbegriff {{category}}</h4>
+      <h4>insgesamt {{totalCount}} Artikel in unserer Datenbank gefunden.</h4>
+    </ion-text>
+      &nbsp;
+      <ion-button expand="block" href="/home" routerDirection="backward">Neue Suche</ion-button>
+  </div>
+
+  &nbsp;
+
+  <ion-list>
+    <ion-row style="background-color: #0F2B64; border-radius: 16px;" class="ion-margin" *ngFor="let item of articles">
+      <ion-col size="4">
+        <img style="width:300px;height:100px;object-fit:cover;border-radius: 5px;" src="{{item.urlToImage}}">
+        </ion-col>
+        <ion-col size="8">
+          <ion-label style="color: #ffffff">
+            {{item.author}} 
+            <p style="color: #ffffff">{{item.publishedAt | date}}</p>
+            <p style="font-weight: 200; color: #ffffff">{{item.title}}</p>
+           </ion-label>
+        </ion-col>
+    </ion-row>
+  </ion-list>
+
+</ion-content>

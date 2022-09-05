@@ -1,7 +1,7 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
+  appId: 'de.dhbw.news',
   appName: 'DHBW_News',
   webDir: 'www',
   bundledWebRuntime: false

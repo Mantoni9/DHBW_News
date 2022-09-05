@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Hilfe</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="initial-text">
+    <p>Schlagwortsuche ganz einfach !</p>
+    <p>Geben Sie ein was Sie interessiert und wir geben Ihnen passende Artikel.</p>
+    <p>So können Sie alles lesen was sie möchten. Ohne Werbung</p>
+  </div>
+
+  <ion-accordion-group>
+    <ion-accordion value="ladzeit">
+
+      <ion-item slot="header" class="div12">
+          <ion-label>Nach welchen Begriffen kann ich suchen?</ion-label>
+      </ion-item>
+
+      <ion-item slot="content" class="body_text">
+        <ion-label text-wrap>Jeden Begriff den Sie möchten. Lassen Sie ihrer Kreativität freien lauf. 
+          Im schlimmsten Fall haben wir dazu keine Artikel.</ion-label>
+      </ion-item>
+
+    </ion-accordion>
+
+    <ion-accordion value="arten">
+
+      <ion-item slot="header">
+        <ion-label text-wrap>Woher stammen die Artikel?</ion-label>
+      </ion-item>
+
+      <ion-list slot="content" class="body_text">
+        <ion-item>
+          <ion-label class="body_text" text-wrap>Die Artikel stammen von der News API</ion-label>
+          <ion-label class="body_text" text-wrap>Diese sammelt aus über 80.000 Quellen Artikel jeglicher Art</ion-label>
+        </ion-item>
+      </ion-list>
+
+    </ion-accordion>
+
+    <ion-accordion value="berechnung">
+
+      <ion-item slot="header">
+        <ion-label text-wrap>Werden meine suchen protokolliert?</ion-label>
+      </ion-item>
+
+      <ion-item slot="content" class="body_text">
+        <ion-label text-wrap>Ja werden Sie. Unter der Historie sehen Sie alle Ihre Anfragen</ion-label>
+        <ion-label text-wrap>Diese können Sie bei bedarf einzeln löschen oder alle auf einmal.</ion-label>
+      </ion-item>
+
+    </ion-accordion>
+
+    <ion-accordion value="persistenz">
+
+      <ion-item slot="header">
+        <ion-label text-wrap>Kann ich meine Berechnung nochmals anschauen?</ion-label>
+      </ion-item>
+
+
+      <ion-item slot="content" class="body_text">
+        <ion-label text-wrap>Ja! Unter dem Menüpunkt Historie kannst du alle bisherigen 
+          Berechnungen nochmal anschauen.</ion-label>
+      </ion-item>
+
+    </ion-accordion>
+  </ion-accordion-group>
+</ion-content>
